@@ -7,9 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class Ejemplo03Component implements OnInit {
 
+  n: number;
+
   constructor() { }
 
   ngOnInit() {
+    this.n = Math.floor(Math.random() * 10 + 1);
   }
 
 }

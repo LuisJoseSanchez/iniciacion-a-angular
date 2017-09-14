@@ -7,9 +7,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class Ejemplo02Component implements OnInit {
 
+  x: number;
+  y: number;
+  palabra: string;
+  persona: object;
+
   constructor() { }
 
   ngOnInit() {
+    this.x = 23;
+    this.y = 9;
+    this.palabra = "meetup";
+    this.persona = {
+      nombre: "Alan Brito",
+      puesto: "desarrollador full-stack",
+      sueldo: 2000
+    };
   }
 
 }

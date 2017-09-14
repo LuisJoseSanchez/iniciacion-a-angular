@@ -7,9 +7,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class Ejemplo06Component implements OnInit {
 
+  euros: number;
+  pesetas: number;
+
   constructor() { }
 
   ngOnInit() {
+    this.limpia();
   }
 
+  limpia() {
+    this.euros = 0;
+    this.pesetas = 0;
+  }
+
+  actualizaPesetas(n: number) {
+    this.pesetas = n * 166.386;
+  }
+
+  actualizaEuros(n: number) {
+    this.euros = n / 166.386;
+  }
 }

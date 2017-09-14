@@ -7,9 +7,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class Ejemplo05Component implements OnInit {
 
+  palabra: string;
+
   constructor() { }
 
   ngOnInit() {
+    this.palabra = "";
   }
 
+  actualizaPalabra(cadena: string) {
+    this.palabra = cadena;
+  }
+
+  limpiaTexto() {
+    this.palabra = "";
+  }
 }
