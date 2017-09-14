@@ -1,3 +1,29 @@
+<h1>Ejemplo 8</h1>
+
+<h2>Directiva estructural *ngFor. Directiva ngModel.</h2>
+
+<b>Números:</b>
+<span
+  *ngFor="let n of numeros">
+  {{ n }}
+</span>
+
+<br>
+
+Inserta número:
+<input [(ngModel)]="numero"  (keyup.enter)="insertaNumero()" type="text">
+
+<br><br>
+
+<b>Frutas:</b>
+<span
+  *ngFor="let f of frutas">
+  {{ f }}
+</span>
+
+<br><br>
+
+<b>Notas</b>
 <p>
-  ejemplo08 works!
+  Para utilizar ngModel hay que importar FormsModule en app.module.ts y añadirlo al import de @NgModule
 </p>

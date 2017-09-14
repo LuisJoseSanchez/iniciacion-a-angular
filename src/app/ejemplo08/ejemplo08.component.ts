@@ -7,9 +7,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class Ejemplo08Component implements OnInit {
 
+  numeros: number[];
+  frutas: string[];
+
+  numero: any;
+
   constructor() { }
 
   ngOnInit() {
+    this.numeros = [1, 5, 8, 24, 32, 11, 55];
+    this.frutas = ["pera", "manzana", "melón", "sandía", "mango"];
   }
 
+  insertaNumero() {
+    this.numeros.push(this.numero);
+    this.numero = ""; // limpia el input
+  }
 }
