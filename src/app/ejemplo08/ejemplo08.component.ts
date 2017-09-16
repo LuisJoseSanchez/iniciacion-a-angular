@@ -10,7 +10,8 @@ export class Ejemplo08Component implements OnInit {
   numeros: number[];
   frutas: string[];
 
-  numero: any;
+  numero: number;
+  fruta: string;
 
   constructor() { }
 
@@ -21,6 +22,11 @@ export class Ejemplo08Component implements OnInit {
 
   insertaNumero() {
     this.numeros.push(this.numero);
-    this.numero = ""; // limpia el input
+    this.numero = null; // limpia el input
+  }
+
+  insertaFruta() {
+    this.frutas.push(this.fruta);
+    this.fruta = null; // limpia el input
   }
 }

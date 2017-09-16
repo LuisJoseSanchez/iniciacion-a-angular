@@ -21,9 +21,14 @@ Inserta número:
   {{ f }}
 </span>
 
+<br>
+
+Inserta fruta:
+<input [(ngModel)]="fruta"  (keyup.enter)="insertaFruta()" type="text">
+
 <br><br>
 
 <b>Notas</b>
 <p>
-  Para utilizar ngModel hay que importar FormsModule en app.module.ts y añadirlo al import de @NgModule
+  Para utilizar <b>ngModel</b> hay que importar <b>FormsModule</b> en <b>app.module.ts</b> y añadirlo al import de <b>@NgModule</b>
 </p>
