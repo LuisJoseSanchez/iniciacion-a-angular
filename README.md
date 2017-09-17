@@ -26,6 +26,23 @@ npm install
 ng serve
 ```
 
+La página principal en la que se cargan todos los ejemplos es `app.component.html`:
+
+```html
+<app-ejemplo01></app-ejemplo01><hr>
+<app-ejemplo02></app-ejemplo02><hr>
+<app-ejemplo03></app-ejemplo03><hr>
+<app-ejemplo03></app-ejemplo03><hr>
+<app-ejemplo03></app-ejemplo03><hr>
+<app-ejemplo04></app-ejemplo04><hr>
+<app-ejemplo05></app-ejemplo05><hr>
+<app-ejemplo06></app-ejemplo06><hr>
+<app-ejemplo07></app-ejemplo07><hr>
+<app-ejemplo08></app-ejemplo08><hr>
+<app-ejemplo09></app-ejemplo09><hr>
+<app-ejemplo10></app-ejemplo10><hr>
+```
+
 ## Ejemplo 1 - Estructura de un componente. Etiqueta (selector). HTML y CSS.
 
 `ejemplo01.component.css`
