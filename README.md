@@ -28,9 +28,45 @@ ng serve
 
 ## Ejemplo 1 - Estructura de un componente. Etiqueta (selector). HTML y CSS.
 
+`ejemplo01.component.css`
+
+```css
+h1 {
+  color: green;
+}
+
+b {
+  color: blue;
+}
+```
+
+`ejemplo01.component.html`
+
+```html
+<h1>Ejemplo 1</h1>
+
+<h2>Estructura de un componente. Etiqueta (selector). HTML y CSS.</h2>
+
+<p>
+  <b>Hola mundo</b>, soy el ejemplo número 1.
+</p>
+```
+
 <img src="img/ejemplo01.png">
 
 ## Ejemplo 2 - Interpolación. Filtros.
+
+`ejemplo01.component.css`
+
+```css
+
+```
+
+`ejemplo01.component.html`
+
+```html
+
+```
 
 <img src="img/ejemplo02.png">
 
