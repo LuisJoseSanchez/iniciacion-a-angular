@@ -509,28 +509,167 @@ export class Ejemplo08Component implements OnInit {
 
 ## Ejemplo 9 - Directiva *ngFor. Uso de clases.
 
-`ejemplo03.component.html`
-
-```html
-```
-
-`ejemplo03.component.ts`
+`empleado.ts`
 
 ```typescript
+export class Empleado {
+  nombre: string;
+  puesto: string;
+  sueldo: number;
+}
+```
+
+`lista-empleados.ts`
+
+```typescript
+import { Empleado } from "./empleado";
+
+export const listaEmpleados: Empleado[] = [
+  {
+    nombre: 'Elena Pérez',
+    puesto: 'jefe de proyecto',
+    sueldo: 2500
+  },
+  {
+    nombre: 'José González',
+    puesto: 'programador senior',
+    sueldo: 2000
+  },
+  {
+    nombre: 'Alberto Gutiérrez',
+    puesto: 'programador junior',
+    sueldo: 1000
+  },
+  {
+    nombre: 'María García',
+    puesto: 'programador senior',
+    sueldo: 1800
+  },
+  {
+    nombre: 'Sara Bernal',
+    puesto: 'programador android',
+    sueldo: 1500
+  }
+  
+];
+```
+
+`ejemplo09.component.css`
+
+```css
+table {
+  border-collapse: collapse;
+}
+
+td {
+  border: 1px solid #666;
+  padding: 4px;
+}
+```
+
+`ejemplo09.component.html`
+
+```html
+<h1>Ejemplo 9</h1>
+
+<h2>Directiva *ngFor. Uso de clases.</h2>
+
+<b>Empleados:</b>
+<table>
+  <tr>
+    <th>Nombre</th><th>Puesto</th><th>Sueldo</th>
+  </tr>
+  <tr *ngFor="let e of empleados">
+    <td>{{ e.nombre }}</td>
+    <td>{{ e.puesto }}</td>
+    <td>{{ e.sueldo }}</td>
+  </tr>
+</table>
+```
+
+`ejemplo09.component.ts`
+
+```typescript
+import { Component, OnInit } from '@angular/core';
+import { Empleado } from '../empleado';
+import { listaEmpleados } from '../lista-empleados';
+
+@Component({
+  selector: 'app-ejemplo09',
+  templateUrl: './ejemplo09.component.html',
+  styleUrls: ['./ejemplo09.component.css']
+})
+export class Ejemplo09Component implements OnInit {
+
+  empleados: Empleado[];
+
+  constructor() {
+    this.empleados = listaEmpleados;
+  }
+
+  ngOnInit() {
+  }
+
+}
 ```
 
 <img src="img/ejemplo09.png">
 
 ## Ejemplo 10 - Directiva estructural *ngIf
 
-`ejemplo03.component.html`
+`ejemplo10.component.html`
 
 ```html
+<h1>Ejemplo 10</h1>
+
+<h2>Directiva estructural *ngIf</h2>
+
+<button (click)="incrementaValor(1)">+</button>
+<button (click)="incrementaValor(-1)">-</button>
+<button (click)="incrementaValor(10)">+10</button>
+<button (click)="incrementaValor(-10)">-10</button>
+
+<h1>
+  
+Temperatura: {{ temperatura }}
+
+<ng-container *ngIf="temperatura > 40">
+  ¡Qué calor!
+  <img width="50" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRiYchVc3LAiZlHhMx_apctHMbzp9utNAX834DSKVIN9VxZngLx0A" alt="">
+</ng-container>
+
+<ng-container *ngIf="temperatura < 10">
+  ¡Qué frío hace!
+  <img width="50" src="https://i.pinimg.com/236x/59/5a/74/595a74309b3209a6a8340ba31b2b0fcd--ideas-frozen-fiesta-frozen.jpg" alt="">
+</ng-container>
+
+</h1>
 ```
 
-`ejemplo03.component.ts`
+`ejemplo10.component.ts`
 
 ```typescript
+import { Component, OnInit } from '@angular/core';
+
+@Component({
+  selector: 'app-ejemplo10',
+  templateUrl: './ejemplo10.component.html',
+  styleUrls: ['./ejemplo10.component.css']
+})
+export class Ejemplo10Component implements OnInit {
+
+  temperatura;
+
+  constructor() { }
+
+  ngOnInit() {
+    this.temperatura = Math.floor(Math.random() * 20 + 1);
+  }
+
+  incrementaValor(incremento: number) {
+    this.temperatura += incremento;
+  }
+}
 ```
 
 <img src="img/ejemplo10.png">
