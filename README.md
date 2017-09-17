@@ -56,16 +56,50 @@ b {
 
 ## Ejemplo 2 - Interpolación. Filtros.
 
-`ejemplo01.component.css`
-
-```css
-
-```
-
 `ejemplo01.component.html`
 
 ```html
+<h1>Ejemplo 2</h1>
 
+<h2>Interpolación. Filtros.</h2>
+
+<p>x vale {{ x }}</p>
+<p>y vale {{ y }}</p>
+<p>x + y vale {{ x + y }}</p>
+<p>palabra vale {{ palabra }}</p>
+<p>persona vale {{ persona | json}}</p>
+<p>nombre: {{ persona.nombre | uppercase }}</p>
+<p>puesto: {{ persona.puesto }}</p>
+```
+
+```typescript
+import { Component, OnInit } from '@angular/core';
+
+@Component({
+  selector: 'app-ejemplo02',
+  templateUrl: './ejemplo02.component.html',
+  styleUrls: ['./ejemplo02.component.css']
+})
+export class Ejemplo02Component implements OnInit {
+
+  x: number;
+  y: number;
+  palabra: string;
+  persona: object;
+
+  constructor() { }
+
+  ngOnInit() {
+    this.x = 23;
+    this.y = 9;
+    this.palabra = "meetup";
+    this.persona = {
+      nombre: "Alan Brito",
+      puesto: "desarrollador full-stack",
+      sueldo: 2000
+    };
+  }
+}
 ```
 
 <img src="img/ejemplo02.png">

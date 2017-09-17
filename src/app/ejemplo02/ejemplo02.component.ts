@@ -24,5 +24,4 @@ export class Ejemplo02Component implements OnInit {
       sueldo: 2000
     };
   }
-
 }
