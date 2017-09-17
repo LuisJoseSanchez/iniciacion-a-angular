@@ -44,31 +44,7 @@ Hola mundo, soy el ejemplo número 1.
 
 ## Ejemplo 8 - Directiva estructural *ngFor. Directiva ngModel.
 
-Números: 1 5 8 24 32 11 55 
-Inserta número: 
- 
+## Ejemplo 9 - Directiva *ngFor. Uso de clases.
 
-Frutas: pera manzana melón sandía mango 
-Inserta fruta: 
- 
+## Ejemplo 10 - Directiva estructural *ngIf
 
-Notas
-Para utilizar ngModel hay que importar FormsModule en app.module.ts y añadirlo al import de @NgModule
-
-Ejemplo 9
-
-Directiva *ngFor. Uso de clases.
-
-Empleados:
-Nombre	Puesto	Sueldo
-Elena Pérez	jefe de proyecto	2500
-José González	programador senior	2000
-Alberto Gutiérrez	programador junior	1000
-María García	programador senior	1800
-Sara Bernal	programador android	1500
-Ejemplo 10
-
-Directiva estructural *ngIf
-
-+ - +10 -10
-Temperatura: 6 ¡Qué frío hace!  
