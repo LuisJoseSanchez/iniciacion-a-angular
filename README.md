@@ -28,7 +28,7 @@ ng serve
 
 ## Ejemplo 1 - Estructura de un componente. Etiqueta (selector). HTML y CSS.
 
-Hola mundo, soy el ejemplo número 1.
+<img src="img/ejemplo01.png">
 
 ## Ejemplo 2 - Interpolación. Filtros.
 
