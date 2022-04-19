@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Empleado } from '../empleado';
+import { LISTA_EMPLEADOS } from '../lista-empleados';
 
 @Component({
   selector: 'app-ejemplo09',
@@ -7,9 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class Ejemplo09Component implements OnInit {
 
+  empleados: Empleado[] = [];
+
   constructor() { }
 
   ngOnInit(): void {
+    this.empleados = LISTA_EMPLEADOS;
   }
 
 }

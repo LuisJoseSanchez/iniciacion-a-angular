@@ -484,9 +484,9 @@ export class Ejemplo08Component implements OnInit {
 
 ```typescript
 export class Empleado {
-  nombre: string;
-  puesto: string;
-  sueldo: number;
+  nombre: string = '';
+  puesto: string = '';
+  sueldo: number = 0;
 }
 ```
 
@@ -495,7 +495,7 @@ export class Empleado {
 ```typescript
 import { Empleado } from "./empleado";
 
-export const listaEmpleados: Empleado[] = [
+export const LISTA_EMPLEADOS: Empleado[] = [
   {
     nombre: 'Elena Pérez',
     puesto: 'jefe de proyecto',
@@ -521,7 +521,6 @@ export const listaEmpleados: Empleado[] = [
     puesto: 'programador android',
     sueldo: 1500
   }
-  
 ];
 ```
 
@@ -563,22 +562,21 @@ td {
 ```typescript
 import { Component, OnInit } from '@angular/core';
 import { Empleado } from '../empleado';
-import { listaEmpleados } from '../lista-empleados';
+import { LISTA_EMPLEADOS } from '../lista-empleados';
 
 @Component({
   selector: 'app-ejemplo09',
   templateUrl: './ejemplo09.component.html',
-  styleUrls: ['./ejemplo09.component.css']
+  styleUrls: ['./ejemplo09.component.scss']
 })
 export class Ejemplo09Component implements OnInit {
 
-  empleados: Empleado[];
+  empleados: Empleado[] = [];
 
-  constructor() {
-    this.empleados = listaEmpleados;
-  }
+  constructor() { }
 
-  ngOnInit() {
+  ngOnInit(): void {
+    this.empleados = LISTA_EMPLEADOS;
   }
 
 }
