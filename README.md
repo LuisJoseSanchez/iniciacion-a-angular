@@ -94,21 +94,31 @@ b {
 ```typescript
 import { Component, OnInit } from '@angular/core';
 
+type Persona = {
+  nombre: string;
+  puesto: string;
+  sueldo: number;
+}
+
 @Component({
   selector: 'app-ejemplo02',
   templateUrl: './ejemplo02.component.html',
-  styleUrls: ['./ejemplo02.component.css']
+  styleUrls: ['./ejemplo02.component.scss']
 })
 export class Ejemplo02Component implements OnInit {
 
-  x: number;
-  y: number;
-  palabra: string;
-  persona: object;
+  x: number = 0;
+  y: number = 0;
+  palabra: string = "";
+  persona: Persona = {
+    nombre: '',
+    puesto: '',
+    sueldo: 0
+  };
 
   constructor() { }
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.x = 23;
     this.y = 9;
     this.palabra = "meetup";
@@ -118,6 +128,7 @@ export class Ejemplo02Component implements OnInit {
       sueldo: 2000
     };
   }
+
 }
 ```
 
@@ -147,15 +158,15 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-ejemplo03',
   templateUrl: './ejemplo03.component.html',
-  styleUrls: ['./ejemplo03.component.css']
+  styleUrls: ['./ejemplo03.component.scss']
 })
 export class Ejemplo03Component implements OnInit {
 
-  n: number;
+  n: number = 0;
 
   constructor() { }
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.n = Math.floor(Math.random() * 10 + 1);
   }
 
