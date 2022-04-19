@@ -1,1 +1,24 @@
-<p>ejemplo10 works!</p>
+<h1>Ejemplo 10</h1>
+
+<h2>Directiva estructural *ngIf</h2>
+
+<button (click)="incrementaValor(1)">+</button>&nbsp;
+<button (click)="incrementaValor(-1)">-</button>&nbsp;
+<button (click)="incrementaValor(10)">+10</button>&nbsp;
+<button (click)="incrementaValor(-10)">-10</button>
+
+<h1>
+  
+Temperatura: {{ temperatura }}
+
+<ng-container *ngIf="temperatura > 40">
+  ¡Qué calor!
+  <img width="50" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRiYchVc3LAiZlHhMx_apctHMbzp9utNAX834DSKVIN9VxZngLx0A" alt="">
+</ng-container>
+
+<ng-container *ngIf="temperatura < 10">
+  ¡Qué frío hace!
+  <img width="50" src="https://i.pinimg.com/236x/59/5a/74/595a74309b3209a6a8340ba31b2b0fcd--ideas-frozen-fiesta-frozen.jpg" alt="">
+</ng-container>
+
+</h1>

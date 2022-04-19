@@ -593,9 +593,9 @@ export class Ejemplo09Component implements OnInit {
 
 <h2>Directiva estructural *ngIf</h2>
 
-<button (click)="incrementaValor(1)">+</button>
-<button (click)="incrementaValor(-1)">-</button>
-<button (click)="incrementaValor(10)">+10</button>
+<button (click)="incrementaValor(1)">+</button>&nbsp;
+<button (click)="incrementaValor(-1)">-</button>&nbsp;
+<button (click)="incrementaValor(10)">+10</button>&nbsp;
 <button (click)="incrementaValor(-10)">-10</button>
 
 <h1>
@@ -623,16 +623,15 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-ejemplo10',
   templateUrl: './ejemplo10.component.html',
-  styleUrls: ['./ejemplo10.component.css']
+  styleUrls: ['./ejemplo10.component.scss']
 })
 export class Ejemplo10Component implements OnInit {
 
-  temperatura;
+  temperatura: number = Math.floor(Math.random() * 20 + 1);
 
   constructor() { }
 
-  ngOnInit() {
-    this.temperatura = Math.floor(Math.random() * 20 + 1);
+  ngOnInit(): void {
   }
 
   incrementaValor(incremento: number) {
