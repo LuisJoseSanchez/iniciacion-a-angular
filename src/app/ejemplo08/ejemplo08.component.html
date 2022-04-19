@@ -1,1 +1,27 @@
-<p>ejemplo08 works!</p>
+<h1>Ejemplo 8</h1>
+
+<h2>Directiva estructural *ngFor. Directiva ngModel.</h2>
+
+<b>Números:</b>
+<span
+  *ngFor="let n of numeros">
+  {{ n }}
+</span>
+
+<br>
+
+Inserta número:
+<input [(ngModel)]="numero"  (keyup.enter)="insertaNumero()" type="text">
+
+<br><br>
+
+<b>Frutas:</b>
+<span
+  *ngFor="let f of frutas">
+  {{ f }}
+</span>
+
+<br>
+
+Inserta fruta:
+<input [(ngModel)]="fruta"  (keyup.enter)="insertaFruta()" type="text">
