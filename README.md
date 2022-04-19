@@ -184,8 +184,8 @@ export class Ejemplo03Component implements OnInit {
 
 <h2>Eventos (el evento click).</h2>
 
-<button (click)="generaValor()">Genera valor</button>
-<button (click)="incrementaValor()">+</button>
+<button (click)="generaValor()">Genera valor</button>&nbsp;
+<button (click)="incrementaValor()">+</button>&nbsp;
 <button (click)="decrementaValor()">-</button>
 
 <h1>{{ n }}</h1>
@@ -199,16 +199,15 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-ejemplo04',
   templateUrl: './ejemplo04.component.html',
-  styleUrls: ['./ejemplo04.component.css']
+  styleUrls: ['./ejemplo04.component.scss']
 })
 export class Ejemplo04Component implements OnInit {
 
-  n: number;
+  n: number = 0;
 
   constructor() { }
 
-  ngOnInit() {
-    this.n = 0;
+  ngOnInit(): void {
   }
 
   generaValor() {
@@ -229,6 +228,31 @@ export class Ejemplo04Component implements OnInit {
 
 ## Ejemplo 5 - Entrada de datos con "input"
 
+Para el enlazado bidireccional (*double binding*) se utiliza `ngModel` y, a su vez, para poder utilizar `ngModel` es necesario importar `FormsModule` en el archivo `app.module.ts` y añadirlo a `imports`.
+
+`app.module.ts`
+
+```typescript
+import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { BrowserModule } from '@angular/platform-browser';
+
+...
+
+@NgModule({
+
+...
+
+  imports: [
+    BrowserModule,
+    FormsModule
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
+})
+export class AppModule { }
+```
+
 `ejemplo05.component.html`
 
 ```html
@@ -236,11 +260,7 @@ export class Ejemplo04Component implements OnInit {
 
 <h2>Entrada de datos con "input"</h2>
 
-<input
-  #entrada
-  (keyup)="actualizaPalabra(entrada.value)"
-  [value]="palabra"
-  type="text">
+<input type="text" [(ngModel)]="palabra">
 
 <button (click)="limpiaTexto()">Reset</button>
 
@@ -255,20 +275,15 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-ejemplo05',
   templateUrl: './ejemplo05.component.html',
-  styleUrls: ['./ejemplo05.component.css']
+  styleUrls: ['./ejemplo05.component.scss']
 })
 export class Ejemplo05Component implements OnInit {
 
-  palabra: string;
+  palabra: string = "";
 
   constructor() { }
 
-  ngOnInit() {
-    this.palabra = "";
-  }
-
-  actualizaPalabra(cadena: string) {
-    this.palabra = cadena;
+  ngOnInit(): void {
   }
 
   limpiaTexto() {
