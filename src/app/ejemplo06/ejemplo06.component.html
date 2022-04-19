@@ -1,1 +1,17 @@
-<p>ejemplo06 works!</p>
+<h1>Ejemplo 6</h1>
+
+<h2>Convertidor euros/pesetas</h2>
+
+Euros:
+<input
+  [(ngModel)]="euros"
+  (keyup)="actualizaPesetas()">
+<br>
+
+Pesetas:
+<input
+  [(ngModel)]="pesetas"
+  (keyup)="actualizaEuros()">
+<br>
+
+<button (click)="limpia()">Reset</button>

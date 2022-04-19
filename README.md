@@ -305,18 +305,14 @@ export class Ejemplo05Component implements OnInit {
 
 Euros:
 <input
-  #entradaEuros
-  (keyup)="actualizaPesetas(entradaEuros.value)"
-  [value]="euros"
-  type="text">
+  [(ngModel)]="euros"
+  (keyup)="actualizaPesetas()">
 <br>
 
 Pesetas:
 <input
-  #entradaPesetas
-  (keyup)="actualizaEuros(entradaPesetas.value)"
-  [value]="pesetas"
-  type="text">
+  [(ngModel)]="pesetas"
+  (keyup)="actualizaEuros()">
 <br>
 
 <button (click)="limpia()">Reset</button>
@@ -330,17 +326,16 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-ejemplo06',
   templateUrl: './ejemplo06.component.html',
-  styleUrls: ['./ejemplo06.component.css']
+  styleUrls: ['./ejemplo06.component.scss']
 })
 export class Ejemplo06Component implements OnInit {
 
-  euros: number;
-  pesetas: number;
+  euros: number = 0;
+  pesetas: number = 0;
 
   constructor() { }
 
-  ngOnInit() {
-    this.limpia();
+  ngOnInit(): void {
   }
 
   limpia() {
@@ -348,12 +343,12 @@ export class Ejemplo06Component implements OnInit {
     this.pesetas = 0;
   }
 
-  actualizaPesetas(n: number) {
-    this.pesetas = n * 166.386;
+  actualizaPesetas() {
+    this.pesetas = this.euros * 166.386;
   }
 
-  actualizaEuros(n: number) {
-    this.euros = n / 166.386;
+  actualizaEuros() {
+    this.euros = this.pesetas / 166.386;
   }
 }
 ```
