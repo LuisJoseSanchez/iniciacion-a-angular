@@ -294,14 +294,14 @@ export class Ejemplo05Component implements OnInit {
 
 <img src="img/ejemplo05.png">
 
-## Ejemplo 6 - Convertidor euros/pesetas.
+## Ejemplo 6 - Conversor euros/pesetas.
 
 `ejemplo06.component.html`
 
 ```html
 <h1>Ejemplo 6</h1>
 
-<h2>Convertidor euros/pesetas</h2>
+<h2>Conversor euros/pesetas</h2>
 
 Euros:
 <input
